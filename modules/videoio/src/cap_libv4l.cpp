@@ -396,7 +396,7 @@ static int xioctl( int fd, int request, void *arg)
    If it fails on the first attempt of /dev/video0, then check if /dev/video is valid.
    Returns the global numCameras with the correct value (we hope) */
 
-static double gettime_after_boot() {
+static double getTimeInMs() {
 	struct timespec time_after_boot;
 	clock_gettime(CLOCK_MONOTONIC,&time_after_boot);
 	return (time_after_boot.tv_sec*1000+time_after_boot.tv_nsec*0.000001);
@@ -1196,12 +1196,12 @@ static int read_frame_v4l2(CvCaptureCAM_V4L* capture) {
 	    tv.tv_sec = 10;
 	    tv.tv_usec = 0;
 	
-        select_start = gettime_after_boot();
+        select_start = getTimeInMs();
 
 	    r = select (capture->deviceHandle+1, &fds, NULL, NULL, &tv);
 
-        select_ms = gettime_after_boot() - select_start;
-        //select_end = gettime_after_boot();
+        select_ms = getTimeInMs() - select_start;
+        //select_end = getTimeInMs();
 
 //        printf("select : %f\n", select_ms);
 	    r = select (capture->deviceHandle+1, &fds, NULL, NULL, &tv);
@@ -1276,12 +1276,12 @@ static int mainloop_v4l2(CvCaptureCAM_V4L* capture) {
 	            tv.tv_sec = 10;
 	            tv.tv_usec = 0;
 
-                select_start = gettime_after_boot();
+                select_start = getTimeInMs();
 
                 r = select (capture->deviceHandle+1, &fds, NULL, NULL, &tv);
 
-                select_ms = gettime_after_boot() - select_start;
-                select_end = gettime_after_boot();
+                select_ms = getTimeInMs() - select_start;
+                select_end = getTimeInMs();
 
 //                printf("select : %f\n", select_ms);
 
