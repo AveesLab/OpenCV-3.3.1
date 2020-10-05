@@ -122,7 +122,6 @@ CV_IMPL void cvAddText(const CvArr* img, const char* text, CvPoint org, CvFont* 
         Q_ARG(void*,(void*) font));
 }
 
-
 double cvGetRatioWindow_QT(const char* name)
 {
     if (!guiMainThread)
