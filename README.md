@@ -20,7 +20,7 @@ Please read the [contribution guidelines](https://github.com/opencv/opencv/wiki/
 * Follow the [coding style guide](https://github.com/opencv/opencv/wiki/Coding_Style_Guide).
 
 ### OpenCV rebuild
-* Replace *<OPENCV_SOURCE_DIR>/modules* to *OpenCV-3.3.1/modules/*.
+* Replace *<OPENCV_SOURCE_DIR>/modules* with *OpenCV-3.3.1/modules/*.
 ```
 $ mv OpenCV-3.3.1/modules/ <OPENCV_SOURCE_DIR>/modules
 ```
@@ -38,5 +38,9 @@ $ source ~/.bashrc
 
 # On-demand capture
 $ export OPENCV_QLEN = 0
+$ source ~/.bashrc
+
+# Set permanently
+$ vi ~/.bashrc (Add "export OPENCV_QLEN = Queue size")
 $ source ~/.bashrc
 ```
