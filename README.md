@@ -34,11 +34,9 @@ $ cd <OPENCV_SOURCE_DIR>/build && sudo make install
 ```
 # Original capture 
 $ export OPENCV_QLEN = Queue size (Queue size = 1,2,3,4)
-$ source ~/.bashrc
 
 # On-demand capture
-$ export OPENCV_QLEN = 0
-$ source ~/.bashrc
+$ export OPENCV_QLEN = 0 (**Queue size = 0** means removing the queue)
 
 # Set permanently
 $ vi ~/.bashrc (Add "export OPENCV_QLEN = Queue size")
