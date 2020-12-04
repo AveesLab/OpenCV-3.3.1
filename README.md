@@ -29,7 +29,7 @@ $ mv OpenCV-3.3.1/modules/ <OPENCV_SOURCE_DIR>/modules
 $ cd <OPENCV_SOURCE_DIR>/build && sudo make install
 ```
 
-### Image capture
+### Capture methods
 
 ```
 # Original capture 
